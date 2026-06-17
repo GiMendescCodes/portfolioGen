@@ -11,25 +11,24 @@
 
 @font-face {
     font-family: 'Fonte-titulo';
-    src: url('assets/fontes/monofontorg.otf') format('truetype');
+    src: url('assets/fontes/monofontorg.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Fonte-textoRegular';
-    src: url('assets/fontes/CreatoDisplay-Regular.otf') format('truetype');
+    src: url('assets/fontes/CreatoDisplay-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Fonte-textoMedia';
-    src: url('assets/fontes/CreatoDisplay-Medium.otf') format('truetype');
+    src: url('assets/fontes/CreatoDisplay-Medium.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-
 
 html {
     scroll-behavior: smooth;
@@ -38,7 +37,7 @@ html {
 body {
     background-image: url('./assets/img/fundo (2).png');
     background-size: cover;
-    background-position: initial;
+    background-position: center;
     color: white;
     min-height: 100vh;
     overflow-x: hidden;
@@ -58,8 +57,9 @@ img {
     display: block;
 }
 
-
-   /* HEADER */
+/* =============================================
+   HEADER
+   ============================================= */
 
 header {
     position: fixed;
@@ -73,13 +73,12 @@ header {
     justify-content: space-between;
     padding: 0 28px;
     z-index: 1000;
-
     background: rgba(15, 15, 30, 0.55);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border: 0.5px solid rgba(230, 220, 220, 0.377);
     border-radius: 35px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(124, 110, 245, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 #titulo {
@@ -97,19 +96,21 @@ header {
 .menu-list li a {
     font-size: 1.125rem;
     color: white;
-    position: relative;
     font-family: 'Fonte-textoRegular', sans-serif;
     padding: 4px 8px;
     border: 1px solid transparent;
     border-radius: 20px;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
 .menu-list li a:hover {
     border-color: white;
 }
 
-/*SECTION BASE*/
+/* =============================================
+   LAYOUT
+   ============================================= */
+
 .section-container {
     width: 100%;
     max-width: 1100px;
@@ -121,13 +122,15 @@ main {
     padding-top: 100px;
 }
 
-/*HERO*/
+/* =============================================
+   HERO
+   ============================================= */
+
 .hero-container {
     min-height: calc(100vh - 100px);
     display: flex;
     align-items: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px 0;
 }
 
 .hero-content {
@@ -144,7 +147,7 @@ main {
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border-radius: 42px;
-    border: #ffffff 0.5px solid;
+    border: 0.5px solid #ffffff;
     padding: 6px 18px;
 }
 
@@ -169,39 +172,26 @@ main {
     flex-wrap: wrap;
 }
 
-/*BUTTONS */
-.botao {
-    display: inline-flex;
-    align-items: center;
-    font-family: 'Fonte-textoRegular', sans-serif;
-    justify-content: center;
-    padding: 14px 32px;
-    background: #000;
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 999px;
-    box-shadow: 5px 5px 0 #1f4fff;
-    transition: transform 0.2s ease;
-}
+/* =============================================
+   BUTTONS
+   ============================================= */
 
-.botao:hover {
-    transform: translateY(-2px);
-}
-
+.botao,
 .botao-outline {
     display: inline-flex;
     align-items: center;
-    font-family: 'Fonte-textoRegular', sans-serif;
     justify-content: center;
     padding: 14px 32px;
     background: #000;
     color: #fff;
     border: 1px solid #fff;
     border-radius: 999px;
+    font-family: 'Fonte-textoRegular', sans-serif;
     box-shadow: 5px 5px 0 #1f4fff;
     transition: transform 0.2s ease;
 }
 
+.botao:hover,
 .botao-outline:hover {
     transform: translateY(-2px);
 }
@@ -218,13 +208,15 @@ main {
     padding: 10px 16px;
 }
 
-/*ABOUT*/
+/* =============================================
+   ABOUT
+   ============================================= */
+
 .about-container {
     padding-top: 100px;
     padding-bottom: 60px;
     display: grid;
     grid-template-columns: 240px 1fr;
-    grid-template-rows: auto auto;
     gap: 48px 60px;
     align-items: start;
 }
@@ -232,7 +224,7 @@ main {
 .about-image {
     width: 280px;
     height: 280px;
-    border-radius: 600px;
+    border-radius: 50%;
     overflow: visible;
     position: relative;
     background: linear-gradient(135deg, #415FFB 0%, #273895 100%);
@@ -285,7 +277,10 @@ main {
     margin-top: 12px;
 }
 
-/* Skills carousel — spans full width */
+/* =============================================
+   SKILLS CAROUSEL
+   ============================================= */
+
 .carousel-hardSkills {
     margin-top: -30px;
     grid-column: 1 / -1;
@@ -293,13 +288,8 @@ main {
     overflow: hidden;
     display: flex;
     padding: 8px 0 20px;
-    position: relative;
     mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-}
-
-.carousel-hardSkills>* {
-    flex: 0 0 100%;
 }
 
 .carousel-hardSkills:hover .group {
@@ -312,6 +302,11 @@ main {
     padding-right: 16px;
     will-change: transform;
     animation: scrolling 20s linear infinite;
+}
+
+@keyframes scrolling {
+    from { transform: translateX(0); }
+    to   { transform: translateX(calc(-100% - 16px)); }
 }
 
 .card {
@@ -328,7 +323,6 @@ main {
     border: 1px solid rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    transition: border-color 0.25s, background 0.25s, transform 0.2s;
 }
 
 .card img {
@@ -339,27 +333,18 @@ main {
 
 .card p {
     font-size: 15px;
-    font-weight: 600;
     font-family: 'Fonte-titulo', sans-serif;
     color: white;
     text-align: center;
     text-transform: uppercase;
 }
 
-@keyframes scrolling {
-    from {
-        transform: translateX(0);
-    }
+/* =============================================
+   PROJECTS
+   ============================================= */
 
-    to {
-        transform: translateX(calc(-100% - 16px));
-    }
-}
-
-/*PROJECTS*/
 .projects-container {
     padding: 100px 0;
-    position: relative;
 }
 
 .projects-container h2 {
@@ -370,7 +355,6 @@ main {
 .projects-swiper {
     width: 100%;
     max-width: 1040px;
-    margin: 0 auto;
     margin: 0 auto;
     overflow: hidden;
     padding-bottom: 48px !important;
@@ -392,14 +376,11 @@ main {
     overflow: hidden;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    transition: 0.3s ease;
-    display: flex;
 }
 
 .project-image {
     width: 290px;
     height: 450px;
-    margin: 0;
     flex-shrink: 0;
     margin-left: 20px;
 }
@@ -413,11 +394,10 @@ main {
 
 .project-content {
     padding: 20px;
-    text-align: start;
 }
 
 .project-content h3 {
-    font-size: clamp(1.6rem, 3vw, 6.25rem);
+    font-size: clamp(1.6rem, 3vw, 3rem);
     margin-bottom: 8px;
     color: #415FFB;
     font-family: 'Fonte-titulo', sans-serif;
@@ -427,12 +407,6 @@ main {
     font-size: clamp(0.95rem, 2vw, 1.25rem);
     margin-bottom: 16px;
     color: #fff;
-    font-family: 'Fonte-textoRegular', sans-serif;
-}
-
-.project-buttons button {
-    align-items: center;
-    justify-content: center;
     font-family: 'Fonte-textoRegular', sans-serif;
 }
 
@@ -446,41 +420,7 @@ main {
     height: 24px;
 }
 
-/* Bolinhas */
-.projects-swiper .swiper-pagination {
-    bottom: 12px !important;
-}
-
-.projects-swiper .swiper-pagination-bullet {
-    width: 10px !important;
-    height: 10px !important;
-    background: rgba(255, 255, 255, 0.3) !important;
-    opacity: 1 !important;
-    margin: 0 4px !important;
-    transition: background 0.3s ease, transform 0.3s ease !important;
-}
-
-.projects-swiper .swiper-pagination-bullet-active {
-    background: #ffffff !important;
-    transform: scale(1.2);
-}
-
-@media (max-width: 768px) {
-    .projects-swiper {
-        max-width: 100%;
-        padding: 0 20px 48px !important;
-    }
-
-    .project-card {
-        width: 240px;
-    }
-
-    .project-image {
-        height: 380px;
-    }
-}
-
-/*SWIPER PAGINATION — bolinhas*/
+/* Swiper pagination */
 .swiper-pagination {
     display: flex !important;
     justify-content: center;
@@ -507,33 +447,10 @@ main {
     transform: scale(1.2);
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-    .swiper-wrapper {
-        justify-content: flex-start;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-    }
+/* =============================================
+   CONTACT
+   ============================================= */
 
-    .swiper-wrapper::-webkit-scrollbar {
-        display: none;
-    }
-
-    .swiper-slide {
-        scroll-snap-align: center;
-    }
-
-    .project-card {
-        width: 240px;
-    }
-
-    .project-image {
-        height: 380px;
-    }
-}
-
-/*CONTACT */
 .contact-container {
     padding-bottom: 100px;
     display: grid;
@@ -543,8 +460,8 @@ main {
 }
 
 .contact-info p {
-    font-family: 'Fonte-textoMedio', sans-serif;
-    font-size: clamp(1rem, 1.5vw, 20px);
+    font-family: 'Fonte-textoMedia', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     color: white;
     margin-bottom: 32px;
 }
@@ -557,8 +474,8 @@ main {
 
 .contatoRedes p {
     margin: 0;
-    font-family: 'Fonte-textoMedio', sans-serif;
-    font-size: clamp(1rem, 1.5vw, 20px);
+    font-family: 'Fonte-textoMedia', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     color: white;
 }
 
@@ -591,7 +508,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 3px;
-    background: rgba(2, 11, 45, 8.5);
     background: linear-gradient(233deg, rgba(2, 11, 45, 0.85) 28%, rgba(7, 36, 147, 1) 71%);
     border: 0.3px solid white;
     border-radius: 20px;
@@ -599,8 +515,8 @@ main {
 }
 
 #formulario label {
-    font-family: 'Fonte-textoMedio', sans-serif;
-    font-size: clamp(1rem, 1.5vw, 20px);
+    font-family: 'Fonte-textoMedia', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     color: white;
     text-transform: uppercase;
     margin-top: 10px;
@@ -616,17 +532,17 @@ main {
     border: 0.5px solid white;
     border-radius: 10px;
     padding: 12px 16px;
-    font-family: 'Fonte-textoMedio', sans-serif;
-    font-size: clamp(1rem, 1.5vw, 20px);
-    color: #ffffff8c;
+    font-family: 'Fonte-textoMedia', sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.55);
     outline: none;
-    transition: border-color 0.2s, background 0.2s;
+    transition: background 0.2s;
     width: 100%;
 }
 
 #formulario input::placeholder,
 #formulario textarea::placeholder {
-    color: rgba(255, 255, 255, 0.507);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 #formulario input:focus,
@@ -648,38 +564,37 @@ main {
 
 #formulario .botao {
     background-color: white;
-    margin-top: 12px;
-    align-self: flex-start;
-    width: 100%;
-    justify-content: center;
     color: black;
-    font-family: 'Fonte-textoMedio', sans-serif;
-    font-size: clamp(1rem, 1.5vw, 15px);
+    margin-top: 12px;
+    width: 100%;
+    font-family: 'Fonte-textoMedia', sans-serif;
 }
 
-/*FOOTER*/
+/* =============================================
+   FOOTER
+   ============================================= */
+
 footer {
     background-color: #000;
     border-radius: 500px 500px 0 0;
     width: 80%;
-    height: 80px;
-
+    min-height: 80px;
     margin: 0 auto;
-    /* centraliza */
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     text-align: center;
     padding: 32px 24px;
-    font-size: clamp(1rem, 1.5vw, 20px);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     color: white;
     font-family: 'Fonte-textoRegular', sans-serif;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-/*SECTION DIVIDER GLOW*/
+/* =============================================
+   SECTION DIVIDER
+   ============================================= */
+
 #about,
 #projects,
 #contact {
@@ -696,9 +611,11 @@ footer {
     background: linear-gradient(to right, transparent, rgba(124, 110, 245, 0.4), transparent);
 }
 
-/*RESPONSIVE*/
+/* =============================================
+   RESPONSIVO
+   ============================================= */
 
-/* Tablet — ≤ 900px */
+/* Tablet — <= 900px */
 @media (max-width: 900px) {
     .about-container {
         grid-template-columns: 180px 1fr;
@@ -711,20 +628,14 @@ footer {
     }
 }
 
-/* Mobile — ≤ 680px */
+/* Mobile — <= 680px */
 @media (max-width: 680px) {
-    :root {
-        --section-gap: 70px;
-        --header-h: 60px;
-    }
-
     header {
         top: 12px;
         width: calc(100% - 32px);
         padding: 0 18px;
     }
 
-    /* Mobile nav */
     nav {
         position: fixed;
         top: 0;
@@ -753,20 +664,13 @@ footer {
         text-align: center;
     }
 
-    .menu-list li a {
-        font-size: 1.1rem;
-        color: #fff;
-    }
-
     .menu-toggle {
         display: flex;
         z-index: 1001;
     }
 
-    /* Hero */
     .hero-container {
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding: 40px 0;
         min-height: auto;
     }
 
@@ -782,19 +686,14 @@ footer {
     .botao,
     .botao-outline {
         width: 100%;
-        justify-content: center;
     }
 
-    /* About — stack vertically */
     .about-container {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
         gap: 28px;
     }
 
     .about-image {
-        grid-column: 1;
-        grid-row: 1;
         width: 150px;
         height: 150px;
         margin: 0 auto;
@@ -810,11 +709,6 @@ footer {
         justify-content: center;
     }
 
-    .carousel-hardSkills {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
     .card {
         min-width: 100px;
         height: 100px;
@@ -825,12 +719,10 @@ footer {
         height: 36px;
     }
 
-    /* Projects */
     .swiper-slide {
         flex: 0 0 85vw;
     }
 
-    /* Contact */
     .contact-container {
         gap: 36px;
     }
@@ -838,9 +730,14 @@ footer {
     #formulario {
         padding: 22px 18px;
     }
+
+    footer {
+        width: 100%;
+        border-radius: 0;
+    }
 }
 
-/* Very small — ≤ 380px */
+/* Very small — <= 380px */
 @media (max-width: 380px) {
     .hero-content h1 {
         font-size: 1.9rem;
