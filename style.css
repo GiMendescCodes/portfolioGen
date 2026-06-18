@@ -534,7 +534,7 @@ main {
     padding: 12px 16px;
     font-family: 'Fonte-textoMedia', sans-serif;
     font-size: clamp(1rem, 1.5vw, 1.25rem);
-    color: rgba(255, 255, 255, 0.55);
+    color: rgb(255, 255, 255);
     outline: none;
     transition: background 0.2s;
     width: 100%;
@@ -557,7 +557,8 @@ main {
 
 #formulario span[id^="erro"] {
     font-size: 0.78rem;
-    color: #f87171;
+        color: white;
+    font-family: 'fonte-textoRegular', sans-serif;
     min-height: 16px;
     display: block;
 }
@@ -569,6 +570,7 @@ main {
     width: 100%;
     font-family: 'Fonte-textoMedia', sans-serif;
 }
+
 
 /* =============================================
    FOOTER
