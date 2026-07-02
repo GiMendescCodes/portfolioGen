@@ -67,3 +67,8 @@ formulario.addEventListener('submit', function(event) {
         formulario.submit();
     }
 });
+
+function deployEmDesenvolvimento(event) {
+    event.preventDefault();
+    alert("🚧 O deploy deste projeto ainda está em desenvolvimento e será disponibilizado em breve!");
+}

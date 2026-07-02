@@ -260,7 +260,9 @@ main {
     font-family: 'Fonte-titulo', sans-serif;
     color: #fff;
     margin-bottom: 5px;
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
+    white-space: nowrap
 }
 
 .about-content p {
@@ -344,6 +346,7 @@ main {
    ============================================= */
 
 .projects-container {
+    margin-top: -100px;
     padding: 100px 0;
 }
 
@@ -354,7 +357,7 @@ main {
 
 .projects-swiper {
     width: 100%;
-    max-width: 1040px;
+    max-width: 1250px;
     margin: 0 auto;
     overflow: hidden;
     padding-bottom: 48px !important;
@@ -370,30 +373,55 @@ main {
     align-items: center;
     gap: 30px;
     width: 100%;
+    min-height: 520px;
+    padding: 20px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 16px;
-    overflow: hidden;
+    border-radius: 30px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+.project-card:not(.project-card-blog) .project-content {
+    max-width: 600px;
+
 }
 
+/* Agora o celular pode crescer */
 .project-image {
-    width: 290px;
-    height: 450px;
+    width: clamp(180px, 26vw, 350px);
+    height: clamp(230px, 33vw, 450px);
     flex-shrink: 0;
-    margin-left: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: visible;
 }
 
 .project-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
+    height: auto;
+    max-height: clamp(280px, 45vw, 600px);
+    object-fit: contain;
+    object-position: bottom;
+    margin-bottom: -35px;
 }
 
+
+/* CARD 2 — notebook (proporção paisagem, mais largo que alto) */
+.project-image-blog {
+    width: clamp(240px, 36vw, 480px);
+    height: clamp(170px, 26vw, 340px);
+}
+
+/* CONTEÚDO */
 .project-content {
-    padding: 20px;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-content h3 {
@@ -408,11 +436,13 @@ main {
     margin-bottom: 16px;
     color: #fff;
     font-family: 'Fonte-textoRegular', sans-serif;
+    line-height: 1.6;
 }
 
 .project-buttons {
     display: flex;
     gap: 12px;
+    margin-top: 10px;
 }
 
 .project-buttons a img {
@@ -437,13 +467,13 @@ main {
     border-radius: 50% !important;
     background: rgba(255, 255, 255, 0.3) !important;
     opacity: 1 !important;
-    transition: background 0.3s ease, transform 0.3s ease !important;
+    transition: background .3s ease, transform .3s ease !important;
     cursor: pointer;
     margin: 0 !important;
 }
 
 .projects-swiper .swiper-pagination-bullet-active {
-    background: #ffffff !important;
+    background: #fff !important;
     transform: scale(1.2);
 }
 
@@ -457,6 +487,7 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: start;
+    margin-top: -50px;
 }
 
 .contact-info p {
@@ -628,6 +659,34 @@ footer {
         grid-template-columns: 1fr;
         gap: 48px;
     }
+
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .project-card:not(.project-card-blog) .project-content {
+        max-width: 100%;
+    }
+
+    .project-content {
+        align-items: center;
+    }
+
+    .project-buttons {
+        justify-content: center;
+    }
+
+    .project-image,
+    .project-image-blog {
+        width: clamp(220px, 55vw, 360px);
+        height: clamp(280px, 60vw, 460px);
+    }
+
+    .project-image-blog {
+        height: clamp(160px, 40vw, 300px);
+    }
 }
 
 /* Mobile — <= 680px */
@@ -709,6 +768,17 @@ footer {
 
     .about-buttons-data {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .project-image,
+    .project-image-blog {
+        width: clamp(180px, 70vw, 320px);
+        height: clamp(230px, 78vw, 400px);
+    }
+
+    .project-image-blog {
+        height: clamp(140px, 50vw, 260px);
     }
 
     .card {
